@@ -42,7 +42,8 @@ notebook==6.4.8
 # Commented out for Binder compatibility
 #numpy==1.22.2
 packaging==21.3
-pandas==1.4.1
+pandas
+#pandas==1.4.1
 pandocfilters==1.5.0
 parso==0.8.3
 pickleshare==0.7.5
