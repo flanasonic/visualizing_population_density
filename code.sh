@@ -3,16 +3,20 @@
 THIS_DIR=$(dirname -- $(readlink -f ${BASH_SOURCE}) )
 if [ ! -d ${THIS_DIR}/venv ]
 then
-	echo "Creating Virtual Environment..."
-	python -m venv venv
+  echo "Creating Virtual Environment..."
+  if [[ "$OSTYPE" =~ ^mysys ]]; then
+         python -m venv venv
+  else
+	 python3 -m venv venv
+  fi
 fi
 
 echo "Activating Virtual Environment..."
 
-if [[ "$OSTYPE" =~ ^msys ]]; then
+if [[ "$OSTYPE" =~ ^mysys ]]; then
    source ${THIS_DIR}/venv/Scripts/activate
 else
-   source ${VENV_SCRIPT}/venv/bin/activate
+   source ${THIS_DIR}/venv/bin/activate
 fi
 
 echo "Installing required packages..."
@@ -28,7 +32,7 @@ echo "To run jupyter lab execute the following commands: "
 if [[ "$OSTYPE" =~ ^msys ]]; then
    echo "  source ${THIS_DIR}/venv/Scripts/activate"
 else
-   echo "  source ${VENV_SCRIPT}/venv/bin/activate"
+   echo "  source ${THIS_DIR}/venv/bin/activate"
 fi
 
 echo "  jupyter lab"
