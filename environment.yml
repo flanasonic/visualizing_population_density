@@ -1,0 +1,17 @@
+name: portfolio
+channels: [conda-forge, pyviz/label/dev, defaults]
+dependencies:
+ - jupyterlab
+ - pandas
+ - pyarrow
+ - datashader
+ - holoviews
+ - bokeh
+ - hvplot
+ - fastparquet
+ - python-snappy
+ - colorcet
+ - dask
+ - spatialpandas
+ - numpy 
+ - geopandas
