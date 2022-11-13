@@ -1,4 +1,4 @@
-.. image:: https://mybinder.org/badge_logo.svg
+.. image:: https://static.mybinder.org/badge_logo.svg
  :target: 
  
 <<<<<<< 
